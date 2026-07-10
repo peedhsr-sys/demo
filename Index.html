@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Certificate - 0123-1509130425</title>
+    <style>
+        @page {
+            size: 595px 842px;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 595px;
+            height: 842px;
+            margin: 0 auto;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            font-family: "Times New Roman", Times, serif;
+        }
+        
+        .page-container {
+            width: 595px;
+            height: 842px;
+            position: relative;
+            background: #fff;
+        }
+        
+        /* Background image (full page border/background) */
+        .bg-image {
+            position: absolute;
+            left: 0px;
+            top: 0.2px;
+            width: 595px;
+            height: 841.6px;
+            z-index: 0;
+        }
+        
+        /* Header image (MCD logo + Ashoka emblem) */
+        .header-image {
+            position: absolute;
+            left: 28.3px;
+            top: 31.9px;
+            width: 537.6px;
+            height: 133.6px;
+            z-index: 1;
+        }
+        
+        /* Ashoka emblem */
+        .ashoka-emblem {
+            position: absolute;
+            left: 242.0px;
+            top: 535.8px;
+            width: 109.6px;
+            height: 92.1px;
+            z-index: 1;
+        }
+        
+        /* Certificate number top right */
+        .cert-number {
+            position: absolute;
+            left: 450.9px;
+            top: 170.5px;
+            font-size: 10.8px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Issued under section text */
+        .issued-text {
+            position: absolute;
+            left: 28.9px;
+            top: 222.0px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            line-height: 11.4px;
+            z-index: 2;
+        }
+        
+        .issued-text-line2 {
+            position: absolute;
+            left: 28.9px;
+            top: 233.5px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Main certification text */
+        .certify-text {
+            position: absolute;
+            left: 28.9px;
+            top: 256.3px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            line-height: 11.4px;
+            z-index: 2;
+        }
+        
+        .certify-text-line2 {
+            position: absolute;
+            left: 28.9px;
+            top: 267.8px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        .certify-text-line3 {
+            position: absolute;
+            left: 28.9px;
+            top: 279.2px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Labels in Hindi - left column */
+        .label-hindi {
+            position: absolute;
+            left: 32.5px;
+            font-size: 9.6px;
+            font-family: "Mangal", "Kokila", "Arial Unicode MS", sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Labels in English */
+        .label-english {
+            position: absolute;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Data values */
+        .data-value {
+            position: absolute;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Specific field positions */
+        .field-name-hindi { top: 306.9px; }
+        .field-name-label { left: 50.6px; top: 305.7px; }
+        .field-name-value { left: 120px; top: 305.7px; }
+        
+        .field-gender-hindi { top: 324.3px; }
+        .field-gender-label { left: 50.6px; top: 323.2px; }
+        .field-gender-value { left: 120px; top: 323.2px; }
+        
+        .field-dob-hindi { top: 341.8px; }
+        .field-dob-label { left: 89.1px; top: 340.6px; }
+        .field-dob-value { left: 180px; top: 340.6px; }
+        
+        .field-pob-hindi { top: 359.2px; }
+        .field-pob-label { left: 92.7px; top: 358.1px; }
+        .field-pob-value1 { left: 180px; top: 358.1px; }
+        .field-pob-value2 { left: 251.1px; top: 369.5px; }
+        .field-pob-value3 { left: 251.1px; top: 381.0px; }
+        
+        .field-dor-hindi { top: 403.8px; }
+        .field-dor-label { left: 102.4px; top: 402.6px; }
+        .field-dor-value { left: 220px; top: 402.6px; }
+        
+        .field-regno-hindi { top: 421.3px; }
+        .field-regno-label { left: 94.5px; top: 420.1px; }
+        .field-regno-value { left: 200px; top: 420.1px; }
+        
+        .field-mother-hindi { top: 438.7px; }
+        .field-mother-label { left: 84.9px; top: 437.6px; }
+        .field-mother-value { left: 180px; top: 437.6px; }
+        
+        .field-father-hindi { top: 456.2px; }
+        .field-father-label { left: 83.7px; top: 455.0px; }
+        .field-father-value { left: 180px; top: 455.0px; }
+        
+        .field-address-hindi { top: 472.5px; }
+        .field-address-label { left: 32.5px; top: 483.9px; }
+        .field-address-value { left: 82.5px; top: 472.5px; }
+        
+        .field-perm-hindi { top: 504.9px; }
+        .field-perm-label { left: 72.9px; top: 503.8px; }
+        .field-perm-value { left: 180px; top: 503.8px; }
+        
+        .field-doi-hindi { top: 522.4px; }
+        .field-doi-label { left: 106.6px; top: 521.2px; }
+        .field-doi-value { left: 220px; top: 521.2px; }
+        
+        /* Disclaimer section */
+        .disclaimer-title {
+            position: absolute;
+            left: 260.7px;
+            top: 651.9px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #000;
+            z-index: 2;
+        }
+        
+        .disclaimer-text {
+            position: absolute;
+            left: 62.6px;
+            top: 662.4px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        .note-text {
+            position: absolute;
+            left: 29.5px;
+            top: 684.4px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            line-height: 11.4px;
+            z-index: 2;
+        }
+        
+        .note-text-line2 {
+            position: absolute;
+            left: 29.5px;
+            top: 695.8px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Footer */
+        .footer-hindi {
+            position: absolute;
+            left: 212.5px;
+            top: 715.6px;
+            font-size: 10px;
+            font-family: "Mangal", "Kokila", "Arial Unicode MS", sans-serif;
+            color: #000;
+            z-index: 2;
+        }
+        
+        .footer-english {
+            position: absolute;
+            left: 164.4px;
+            top: 725.9px;
+            font-size: 9.6px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #000;
+            z-index: 2;
+        }
+        
+        /* Separator line */
+        .separator {
+            position: absolute;
+            left: 28px;
+            top: 295px;
+            width: 539px;
+            height: 1px;
+            background: #000;
+            z-index: 2;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                width: 595px;
+                height: 842px;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Background border/frame image -->
+        <img src="img_3.png" class="bg-image" alt="background">
+        
+        <!-- Header with MCD Logo and Ashoka -->
+        <img src="img_0.jpeg" class="header-image" alt="MCD Header">
+        
+        <!-- Certificate Number -->
+        <div class="cert-number">0123-1509130425</div>
+        
+        <!-- Issued under section -->
+        <div class="issued-text">
+            (Issued under section 17 of the Registration of Birth and Death Act, 1969 and 8/13 of
+        </div>
+        <div class="issued-text-line2">
+            Delhi Registration of Birth Rule,1999)
+        </div>
+        
+        <!-- Main certification text -->
+        <div class="certify-text">
+            This is to certify that the following information has been taken from the original record
+        </div>
+        <div class="certify-text-line2">
+            of BIRTH which is the register for Municipal Corporation Of Delhi of SHAHDARA
+        </div>
+        <div class="certify-text-line3">
+            NORTH ZONE of N.C.T. Delhi
+        </div>
+        
+        <!-- Separator -->
+        <div class="separator"></div>
+        
+        <!-- Name Field -->
+        <div class="label-hindi field-name-hindi">नाम</div>
+        <div class="label-english field-name-label">Name</div>
+        <div class="data-value field-name-value">AMAAN ANSARI</div>
+        
+        <!-- Gender Field -->
+        <div class="label-hindi field-gender-hindi">लिंग</div>
+        <div class="label-english field-gender-label">Gender</div>
+        <div class="data-value field-gender-value">MALE</div>
+        
+        <!-- Date of Birth Field -->
+        <div class="label-hindi field-dob-hindi">जन्म की तिथि</div>
+        <div class="label-english field-dob-label">Date of Birth</div>
+        <div class="data-value field-dob-value">24/06/2021</div>
+        
+        <!-- Place of Birth Field -->
+        <div class="label-hindi field-pob-hindi">जन्म का स्थान</div>
+        <div class="label-english field-pob-label">Place of Birth</div>
+        <div class="data-value field-pob-value1">SWAMY DAYANAND HOSPITAL SWAMY DAYAND</div>
+        <div class="data-value field-pob-value2">HOSPPITAL, C-BLOCK, DILSHAD GARDEN, DELHI 110095</div>
+        <div class="data-value field-pob-value3">DELHI DILSHAD GARDEN SHAHDARA DELHI INDIA 110095</div>
+        
+        <!-- Date of Registration Field -->
+        <div class="label-hindi field-dor-hindi">पंजीकरण की तिथि</div>
+        <div class="label-english field-dor-label">Date of Registration</div>
+        <div class="data-value field-dor-value">14/07/2021</div>
+        
+        <!-- Registration No Field -->
+        <div class="label-hindi field-regno-hindi">पंजीकरण संख्या</div>
+        <div class="label-english field-regno-label">Registration No</div>
+        <div class="data-value field-regno-value">MCDOLIR-0121-279439-E</div>
+        
+        <!-- Mother's Name Field -->
+        <div class="label-hindi field-mother-hindi">माता का नाम</div>
+        <div class="label-english field-mother-label">Name of Mother</div>
+        <div class="data-value field-mother-value">KANCHAN</div>
+        
+        <!-- Father's Name Field -->
+        <div class="label-hindi field-father-hindi">पिता का नाम</div>
+        <div class="label-english field-father-label">Name of Father</div>
+        <div class="data-value field-father-value">WAHID</div>
+        
+        <!-- Present Address Field -->
+        <div class="label-hindi field-address-hindi">वर्तमान/जन्म के समय पता</div>
+        <div class="label-english field-address-label">Present/Address at the time of Birth</div>
+        <div class="data-value field-address-value">A -288, OLD SEEMA PURI DELHI EAST DELHI INDIA 110095</div>
+        
+        <!-- Permanent Address Field -->
+        <div class="label-hindi field-perm-hindi">स्थाई पता</div>
+        <div class="label-english field-perm-label">Permanent Address</div>
+        <div class="data-value field-perm-value">A -288, OLD SEEMA PURI DELHI EAST DELHI INDIA 110095</div>
+        
+        <!-- Date of Issue Field -->
+        <div class="label-hindi field-doi-hindi">जारी करने की तिथि</div>
+        <div class="label-english field-doi-label">Date of Issue</div>
+        <div class="data-value field-doi-value">15/09/2023</div>
+        
+        <!-- Ashoka Emblem -->
+        <img src="img_1.png" class="ashoka-emblem" alt="Ashoka Emblem">
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer-title">Disclaimer:</div>
+        <div class="disclaimer-text">
+            This is system generated certificate/license. In case of any discrepancy, please contact the department.
+        </div>
+        
+        <!-- Note -->
+        <div class="note-text">
+            Note: This certificate is system generated and does not require any seal/signature in original . The
+        </div>
+        <div class="note-text-line2">
+            authenticity of this certificate can be verified at mcdonline.nic.in
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer-hindi">प्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्चित करे</div>
+        <div class="footer-english">ENSURE REGISTRATION OF EVERY BIRTH & DEATH</div>
+    </div>
+</body>
+  </html>
